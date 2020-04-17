@@ -8,7 +8,13 @@
 
 #include "LiquidCrystal_PCF8574.h"
 
-#include <Wire.h>
+
+// Macro to make this lib work with jm_wire.h
+#if __has_include("jm_Wire.h")
+  #include <jm_Wire.h>
+  #else
+  #include <Wire.h>
+#endif
 
 /// Definitions on how the PCF8574 is connected to the LCD
 
